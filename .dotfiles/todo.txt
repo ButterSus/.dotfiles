@@ -1,0 +1,11 @@
+1. One-line shell prompt support for fish & kitty
+2. Add preselect visuals
+3. Add ability to save workspaces no matter if there are no of them
+4. Instal rnote alternative
+5. Configure nvim-tree?
+6. Configure gtk theme to cattpuccin: thunar & nekobox
+7. Save nekobox autolaunch config
+8. Split hyprland.conf into multiple files
+9. Write README.md somehow
+10. Add separate branches for different styles
+
