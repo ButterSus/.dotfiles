@@ -8,4 +8,5 @@
 8. Split hyprland.conf into multiple files
 9. Write README.md somehow
 10. Add separate branches for different styles
+11. Add printscreen
 

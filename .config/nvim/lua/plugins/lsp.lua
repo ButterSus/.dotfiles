@@ -36,7 +36,8 @@ local languages = {
    "gopls",
    "texlab",
    "svls",
-   "hdl_checker"
+   "hdl_checker",
+   "tinymist"
 }
 
 return {
@@ -104,6 +105,16 @@ return {
             vim.cmd.highlight(hl .. " gui=undercurl")
          end
       end,
+      opts = {
+         servers = {
+            tinymist = {
+               settings = {
+                  exportPdf = "onType",
+                  outputPath = "$root/target/$dir/$name"
+               }
+            }
+         }
+      }
    },
    {
       "williamboman/mason.nvim",

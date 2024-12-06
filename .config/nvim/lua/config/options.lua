@@ -1,4 +1,5 @@
 vim.opt.mousemoveevent = true
+vim.opt.relativenumber = true
 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -29,7 +30,7 @@ vim.opt.updatetime = 250
 vim.opt.timeoutlen = 300
 
 -- disable cursor-styling
-vim.opt.guicursor = ""
+vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
 
 vim.opt.termguicolors = true
 
