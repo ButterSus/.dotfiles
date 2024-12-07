@@ -3,3 +3,19 @@
 [user]
 	email = eduardkrivosapkin5@gmail.com
 	name = Krivoshapkin Eduard
+[pull]
+  rebase = true
+[diff]
+  tool = nvimdiff
+  guitool = nvimdiff
+[merge]
+  tool = nvimdiff
+  conflictstyle = diff3
+[mergetool]
+  keepBackup = false
+  trustExitCode = false
+  prompt = true
+[difftool]
+  prompt = false
+[mergetool "nvimdiff"]
+  layout = "LOCAL,BASE,REMOTE / MERGED"
