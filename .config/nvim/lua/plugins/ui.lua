@@ -57,4 +57,10 @@ return {
          vim.keymap.set("n", "<A-l>", require("smart-splits").resize_right)
       end,
    },
+   {
+      {
+         "nvim-tree/nvim-tree.lua",
+         opts = { on_attach = on_attach_change }
+      }
+   }
 }
