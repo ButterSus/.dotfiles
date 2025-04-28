@@ -1,0 +1,3 @@
+[submodule "packages/dev/.config/nvim"]
+	path = packages/dev/.config/nvim
+	url = https://github.com/ButterSus/astronvim-dotfiles.git
