@@ -1,0 +1,19 @@
+[core]
+editor = nvim
+compression = 0
+pager = less
+
+[user]
+email = buttersus@mail.ru
+name = Krivoshapkin Eduard
+
+[pull]
+rebase = true
+
+[mergetool]
+keepBackup = false
+trustExitCode = false
+prompt = true
+
+[http]
+postBuffer = 1048576000
