@@ -23,7 +23,6 @@ There is a pure minimum needed for any CLI environment
 
 3. Set up development environment:
    ```bash
-   # Install NeoVim and development tools
    bash scripts/nvim-setup.sh
    ```
 
