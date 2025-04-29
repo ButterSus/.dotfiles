@@ -58,14 +58,14 @@ if [[ $base_devel =~ ^[Nn]$ ]]; then
     echo "Skipping base-devel installation"
 else
     echo "Installing base-devel..."
-    sudo pacman -S --needed base-devel
+    sudo pacman -S --needed --noconfirm base-devel
 fi
 
 # Ask about cmake
 read -p "Do you need cmake? [y/N] " cmake
 if [[ $cmake =~ ^[Yy]$ ]]; then
     echo "Installing cmake..."
-    sudo pacman -S --needed cmake
+    sudo pacman -S --needed --noconfirm cmake
 fi
 
 # Clear unused package caches
@@ -85,7 +85,7 @@ if [[ $add_archlinuxcn =~ ^[Yy]$ ]]; then
     echo "Adding 'archlinuxcn' repository..."
     if ! grep -q "archlinuxcn" /etc/pacman.conf; then
         echo -e "\n[archlinuxcn]\nServer = https://repo.archlinuxcn.org/\$arch" | sudo tee -a /etc/pacman.conf
-        sudo pacman -Sy && sudo pacman -S --needed archlinuxcn-keyring
+        sudo pacman -Sy --noconfirm && sudo pacman -S --needed --noconfirm archlinuxcn-keyring
     else
         echo "archlinuxcn repository is already configured."
     fi
@@ -96,7 +96,7 @@ if grep -q "archlinuxcn" /etc/pacman.conf; then
     read -p "Would you like to install yay? [y/N] " install_yay
     if [[ $install_yay =~ ^[Yy]$ ]]; then
         echo "Installing yay..."
-        sudo pacman -S --needed yay
+        sudo pacman -S --needed --noconfirm yay
     fi
 fi
 
