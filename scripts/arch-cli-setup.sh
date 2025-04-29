@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-################################################################
-# 📜 Arch Linux Package Install Script                         #
-################################################################
-# Installs listed packages on Arch-based systems via Pacman    #
-# Also updates the cache database and existing applications    #
-# For more info, see: https://wiki.archlinux.org/title/Pacman  #
-################################################################
+# This script by design should be able to be run multiple times
+# without issue. It also doesn't uninstall any existing packages,
+# it only installs what is missing.
+
+#####################################
+# Arch Linux Package Install Script #
+#####################################
 
 # Function to handle Ctrl+C
 cleanup() {
@@ -75,6 +75,28 @@ if [[ $clear_cache =~ ^[Yy]$ ]]; then
     sudo pacman -Sc --noconfirm
     if command -v paccache &> /dev/null; then
         paccache -r
+    fi
+fi
+
+# Ask about adding the 'archlinuxcn' repository
+echo "Please make sure you have archlinuxcn installed if you want to have yay installed."
+read -p "Would you like to add the 'archlinuxcn' repository? [y/N] " add_archlinuxcn
+if [[ $add_archlinuxcn =~ ^[Yy]$ ]]; then
+    echo "Adding 'archlinuxcn' repository..."
+    if ! grep -q "archlinuxcn" /etc/pacman.conf; then
+        echo -e "\n[archlinuxcn]\nServer = https://repo.archlinuxcn.org/\$arch" | sudo tee -a /etc/pacman.conf
+        sudo pacman -Sy && sudo pacman -S --needed archlinuxcn-keyring
+    else
+        echo "archlinuxcn repository is already configured."
+    fi
+fi
+
+# Ask about installing yay if archlinuxcn is present
+if grep -q "archlinuxcn" /etc/pacman.conf; then
+    read -p "Would you like to install yay? [y/N] " install_yay
+    if [[ $install_yay =~ ^[Yy]$ ]]; then
+        echo "Installing yay..."
+        sudo pacman -S --needed yay
     fi
 fi
 
