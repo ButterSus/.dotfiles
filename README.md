@@ -23,13 +23,22 @@ There is a pure minimum needed for any CLI environment
 
 3. Set up development environment:
    ```bash
-   bash scripts/nvim-setup.sh
+   bash scripts/dev-setup.sh
    ```
+   This will guide you through setting up your development environment with interactive prompts for each component:
+   - NeoVim with all the good stuff (tree-sitter, ripgrep, etc.)
+   - C++ development tools (GCC, Clang, CMake, etc.)
+   - Rust development environment
+   - JavaScript/TypeScript tools
+   - Docker and container tools
+   - Python development environment
+   - ZShell with Starship and Zellij
+   - Yazi file manager
 
 ## Directory Structure
 - `scripts/` - Installation and management scripts
   - `arch-cli-setup.sh` - Basic Arch Linux CLI setup
-  - `nvim-setup.sh` - NeoVim and development tools setup
+  - `dev-setup.sh` - Modular development environment setup
 - `packages/` - Configurations managed by GNU Stow
   - `dev/` - Development environment configs (git, nvim, etc.)
 

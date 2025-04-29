@@ -61,13 +61,6 @@ else
     sudo pacman -S --needed --noconfirm base-devel
 fi
 
-# Ask about cmake
-read -p "Do you need cmake? [y/N] " cmake
-if [[ $cmake =~ ^[Yy]$ ]]; then
-    echo "Installing cmake..."
-    sudo pacman -S --needed --noconfirm cmake
-fi
-
 # Clear unused package caches
 read -p "Would you like to clear unused package caches? [y/N] " clear_cache
 if [[ $clear_cache =~ ^[Yy]$ ]]; then
